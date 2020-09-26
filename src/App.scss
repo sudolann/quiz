@@ -1,0 +1,17 @@
+@import './styles/constants.scss';
+@import './styles/reset.scss';
+@import '~antd/dist/antd.css';
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: $dark-grey;
+    // min-height: 400px;
+    // min-width: 300px;
+}
+
+.container {
+    // max-width: 1200px;
+    // margin: 0 auto;
+    // overflow: hidden;
+
+}
