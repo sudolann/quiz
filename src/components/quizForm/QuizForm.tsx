@@ -4,10 +4,8 @@ import { fetchQuestions } from '../../state/quiz/actions';
 import { Button } from 'antd';
 import { getQuizData } from '../../state/quiz/selectors';
 import { QuizState } from '../../state/quiz/reducer';
-import { LoadingBar } from '../loadingBar/LoadingBar';
-import { ErrorMessage } from '../errorMessage/ErrorMessage';
+import { QuestionCard, ErrorMessage, LoadingBar } from '../../components';
 import './QuizForm.scss';
-import { QuestionCard } from '../questionCard/QuestionCard';
 
 export type DifficultyLevel = 'easy' | 'hard' | 'select';
 export interface FormProps {
@@ -47,7 +45,6 @@ export const QuizForm: FunctionComponent = (): ReactElement => {
       </header>
       <form className='form' onSubmit={handleSubmit}>
         {error && <ErrorMessage message={error} />}
-
         <select value={inputs.difficulty} name='difficulty' placeholder='difficulty' onChange={handleChange} className='form__input'>
           <option disabled value='select'>
             difficulty

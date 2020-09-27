@@ -5,13 +5,40 @@
 body {
     font-family: 'Roboto', sans-serif;
     color: $dark-grey;
-    // min-height: 400px;
-    // min-width: 300px;
 }
 
-.container {
-    // max-width: 1200px;
-    // margin: 0 auto;
-    // overflow: hidden;
+h1 {
+    padding: 1.6rem 2rem 0;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 700;
 
+    @media (min-width: $breakpoint-tablet) {
+        padding: 2rem 2.6rem 0;
+        font-size: 1.5rem;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+        padding: 2.4rem 3.12rem 0;
+        font-size: 1.875rem;
+    }
+}
+
+#quiz-btn {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    padding: .2rem .9rem;
+    height: 2.3rem;
+
+    @media (min-width: $breakpoint-tablet) {
+        font-size: 1.15rem;
+        padding: .6rem 1.5rem;
+        height: 3rem;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+        font-size: 1.5rem;
+        padding: .67rem 1.95rem;
+        height: 3.55rem;
+    }
 }

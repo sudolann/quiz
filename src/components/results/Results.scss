@@ -1,0 +1,13 @@
+.results {
+    max-width: 1200px;
+}
+
+.results__question__item {
+    display: flex;
+    justify-content: left;
+
+    svg {
+        width: 10px;
+        height: auto;
+    }
+}

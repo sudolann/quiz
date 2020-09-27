@@ -7,14 +7,14 @@ import { setScore } from '../../state/points/actions';
 import { getPoints } from '../../state/points/selectors';
 import { Results } from '../results/Results';
 import './QuestionCard.scss';
+import { Redirect, useHistory } from 'react-router';
 
 export const QuestionCard: FunctionComponent = (): ReactElement => {
   const dispatch = useDispatch();
   const quiz: QuizState = useSelector(getQuizData);
   const points: Array<0 | 1> = useSelector(getPoints);
   const list = quiz.list;
-
-
+  const history = useHistory();
   const handleClick = (answer: boolean) => {
     const correctAnswer = list[points.length].correct_answer === 'True' ? true : false;
     const point = correctAnswer === answer ? 1 : 0;
@@ -22,7 +22,7 @@ export const QuestionCard: FunctionComponent = (): ReactElement => {
   };
 
   if (list.length === points.length) {
-    return <Results />;
+    return <Redirect to='/results' />;
   }
   return (
     <div className='question'>
