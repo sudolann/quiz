@@ -1,11 +1,11 @@
-import React, { FunctionComponent, ReactElement, useState } from 'react';
+import React, { FunctionComponent, ReactElement } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button } from 'antd';
 import { getQuizData } from '../../state/quiz/selectors';
 import { QuizState } from '../../state/quiz/reducer';
 import { setScore } from '../../state/points/actions';
 import { getPoints } from '../../state/points/selectors';
-import { Redirect, useHistory } from 'react-router';
+import { Redirect } from 'react-router';
 import './QuestionCard.scss';
 
 export const QuestionCard: FunctionComponent = (): ReactElement => {
@@ -13,7 +13,6 @@ export const QuestionCard: FunctionComponent = (): ReactElement => {
   const quiz: QuizState = useSelector(getQuizData);
   const points: Array<0 | 1> = useSelector(getPoints);
   const list = quiz.list;
-  const history = useHistory();
   const handleClick = (answer: boolean) => {
     const correctAnswer = list[points.length].correct_answer === 'True' ? true : false;
     const point = correctAnswer === answer ? 1 : 0;
