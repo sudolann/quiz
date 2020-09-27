@@ -9,6 +9,14 @@
     justify-content: center;
     min-height: 350px;
 
+    @media (min-width: $breakpoint-tablet) {
+        min-height: 400px;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+        min-height: 500px;
+    }
+
     .form__input {
         background-color: transparent;
         font-size: 0.875rem;
@@ -64,15 +72,37 @@
     }
 }
 
-.quiz-btn {
+#quiz-btn {
     text-transform: uppercase;
-    border-radius: 1rem;
+    font-size: 0.9rem;
+    padding: .45rem .9rem;
+    height: 2.3rem;
+
+    @media (min-width: $breakpoint-tablet) {
+        font-size: 1.15rem;
+        padding: .6rem 1.5rem;
+        height: 3rem;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+        font-size: 1.5rem;
+        padding: .67rem 1.95rem;
+        height: 3.55rem;
+    }
 }
 
 
 .header {
     width: 100%;
     height: calc(20vh - 1.6rem);
+
+    @media (min-width: $breakpoint-tablet) {
+        height: calc(20vh - 2rem);
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+        height: calc(20vh - 2.4rem);
+    }
 
     h1 {
         padding: 1.6rem 2rem 0;
@@ -81,10 +111,12 @@
         font-weight: 700;
 
         @media (min-width: $breakpoint-tablet) {
+            padding: 2rem 2.6rem 0;
             font-size: 1.5rem;
         }
 
         @media (min-width: $breakpoint-desktop) {
+            padding: 2.4rem 3.12rem 0;
             font-size: 1.875rem;
         }
     }

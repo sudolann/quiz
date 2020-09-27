@@ -7,6 +7,7 @@ import { QuizState } from '../../state/quiz/reducer';
 import { LoadingBar } from '../loadingBar/LoadingBar';
 import { ErrorMessage } from '../errorMessage/ErrorMessage';
 import './QuizForm.scss';
+import { QuestionCard } from '../questionCard/QuestionCard';
 
 export type DifficultyLevel = 'easy' | 'hard' | 'select';
 export interface FormProps {
@@ -22,10 +23,12 @@ export const QuizForm: FunctionComponent = (): ReactElement => {
   if (loading) {
     return <LoadingBar />;
   }
+  if (list.length > 0) {
+    return <QuestionCard />;
+  }
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = event.target;
-
     setInputs({ ...inputs, [name]: value });
   };
 
@@ -53,7 +56,7 @@ export const QuizForm: FunctionComponent = (): ReactElement => {
           <option value='hard'>hard</option>
         </select>
         <input type='number' name='amount' placeholder='amount' value={inputs.amount} onChange={handleChange} className='form__input form__input--number' />
-        <Button type='primary' size='large' className='quiz-btn' htmlType='submit' disabled={!inputs.amount || inputs.difficulty === 'select'}>
+        <Button type='primary' id='quiz-btn' htmlType='submit' disabled={!inputs.amount || inputs.difficulty === 'select'}>
           begin
         </Button>
       </form>
