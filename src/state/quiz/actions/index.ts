@@ -3,6 +3,7 @@ import { FETCH_QUIZ } from '../constants';
 import { createAction } from '@reduxjs/toolkit';
 import { QuestionsProps } from '../reducer';
 import { DifficultyLevel } from '../../../components/quizForm/QuizForm';
+import * as ent from 'html-entities';
 
 export const actionFetchQuizPending = createAction(FETCH_QUIZ.PENDING);
 
@@ -14,7 +15,6 @@ export const actionFetchQuizFailure = createAction(FETCH_QUIZ.FAILURE, (message:
 }));
 
 export function fetchQuestions(difficulty: DifficultyLevel, amount: number): AppThunk {
-  console.log(amount, difficulty);
   return async (dispatch: (arg0: { payload: QuestionsProps[] | string; type: string }) => void): Promise<void> => {
     const request = fetch(`https://opentdb.com/api.php?amount=${amount}&difficulty=${difficulty}&type=boolean`);
     dispatch(actionFetchQuizPending());
@@ -25,9 +25,11 @@ export function fetchQuestions(difficulty: DifficultyLevel, amount: number): App
       if (data.response_code !== 0) {
         dispatch(actionFetchQuizFailure('Problem with fetch questions, please try later'));
       } else {
+        const Entities = ent.AllHtmlEntities;
+        const entities = new Entities();
         const results = data.results.reduce((acc: QuestionsProps[], item: QuestionsProps) => {
           const { category, question, correct_answer } = item;
-          return [...acc, { category, question, correct_answer }];
+          return [...acc, { category, question: entities.decode(question), correct_answer }];
         }, []);
         dispatch(actionFetchQuizSuccess(results));
       }

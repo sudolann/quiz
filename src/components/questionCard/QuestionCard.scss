@@ -1,95 +1,81 @@
 @import '../../styles/constants.scss';
 
 .question {
-    display: flex;
-    width: 100%;
-    height: calc(100vh - 10px);
-    padding: 3rem 0;
-    min-height: 400px;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 400px;
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 10px);
+  padding: 3rem 0;
+  min-height: 400px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 400px;
 
-    @media (min-width: $breakpoint-tablet) {
-        min-height: 450px;
-    }
+  @media (min-width: $breakpoint-tablet) {
+    min-height: 450px;
+  }
 
-    @media (min-width: $breakpoint-desktop) {
-        min-height: 500px;
-    }
+  @media (min-width: $breakpoint-desktop) {
+    min-height: 500px;
+  }
 }
 
-
 .question__card {
-    box-shadow: 0px 0px 8px 0px rgba(130, 130, 130, 0.64);
-    border-radius: 0.35rem;
-    width: 20rem;
-    height: 12rem;
-    position: relative;
-    box-sizing: content-box;
+  box-shadow: 0px 0px 8px 0px rgba(130, 130, 130, 0.64);
+  border-radius: 0.35rem;
+  width: 20rem;
+  height: 12rem;
+  position: relative;
+  box-sizing: content-box;
 
-    @media (min-width: $breakpoint-tablet) {
-        width: 24rem;
-        height: 14.5rem;
-    }
+  @media (min-width: $breakpoint-tablet) {
+    width: 24rem;
+    height: 14.5rem;
+  }
 
-    @media (min-width: $breakpoint-desktop) {
-        width: 31.2rem;
-        height: 18.5rem;
-    }
+  @media (min-width: $breakpoint-desktop) {
+    width: 31.2rem;
+    height: 18.5rem;
+  }
 
-    p {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -80%);
-        width: 70%;
-        text-align: center;
-        font-size: 0.85rem;
-        line-height: 1.2rem;
-
-
-        @media (min-width: $breakpoint-tablet) {
-            font-size: 1rem;
-            line-height: 1.45rem;
-        }
-
-        @media (min-width: $breakpoint-desktop) {
-            font-size: 1.3rem;
-            line-height: 1.85rem;
-        }
-    }
+  p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    width: 70%;
+    text-align: center;
+  }
 }
 
 .question__card__buttons {
-    border-top: 1px solid rgba(130, 130, 130, 0.19);
-    height: 2.8rem;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  border-top: 1px solid rgba(130, 130, 130, 0.19);
+  height: 2.8rem;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 
-    @media (min-width: $breakpoint-tablet) {
-        height: 4rem;
-    }
+  @media (min-width: $breakpoint-tablet) {
+    height: 4rem;
+  }
 
-    @media (min-width: $breakpoint-desktop) {
-        height: 4.9rem;
-    }
+  @media (min-width: $breakpoint-desktop) {
+    height: 4.9rem;
+  }
 }
 
 .question__footer p {
-    font-size: 0.85rem;
+  font-size: 0.85rem;
 
-    @media (min-width: $breakpoint-tablet) {
-        font-size: 1rem;
-    }
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 1rem;
+  }
 
-    @media (min-width: $breakpoint-desktop) {
-        font-size: 1.3rem;
-    }
+  @media (min-width: $breakpoint-desktop) {
+    font-size: 1.3rem;
+  }
 }

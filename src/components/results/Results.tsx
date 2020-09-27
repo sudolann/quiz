@@ -18,6 +18,7 @@ export const Results: FunctionComponent = (): ReactElement => {
     const res = acc + item;
     return res;
   }, 0);
+
   return (
     <div className='results'>
       <div className='results__title'>
