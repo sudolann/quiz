@@ -16,7 +16,7 @@ export const actionFetchQuizFailure = createAction(FETCH_QUIZ.FAILURE, (message:
 export function fetchQuestions(difficulty: DifficultyLevel, amount: number): AppThunk {
   console.log(amount, difficulty);
   return async (dispatch: (arg0: { payload: QuestionsProps[] | string; type: string }) => void): Promise<void> => {
-    const request = fetch(`https://opentdb.com/api.php?amunt=${amount}&difficulty=${difficulty}&type=boolean`);
+    const request = fetch(`https://opentdb.com/api.php?amount=${amount}&difficulty=${difficulty}&type=boolean`);
     dispatch(actionFetchQuizPending());
 
     try {
