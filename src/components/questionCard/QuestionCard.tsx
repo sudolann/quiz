@@ -23,25 +23,27 @@ export const QuestionCard: FunctionComponent = (): ReactElement => {
     return <Redirect to='/results' />;
   }
   return (
-    <div className='question'>
-      <div className='question__header'>
-        <h1>{list[points.length]?.category}</h1>
-      </div>
-      <div className='question__card'>
-        <p>{list[points.length]?.question}</p>
-        <div className='question__card__buttons'>
-          <Button type='primary' ghost id='quiz-btn' onClick={(): void => handleClick(true)}>
-            true
-          </Button>
-          <Button type='primary' ghost id='quiz-btn' onClick={(): void => handleClick(false)}>
-            false
-          </Button>
+    <div className='container'>
+      <div className='question'>
+        <div className='question__header'>
+          <h1>{list[points.length]?.category}</h1>
         </div>
-      </div>
-      <div className='question__footer'>
-        <p>
-          {points.length + 1} of {list.length}
-        </p>
+        <div className='question__card'>
+          <p>{list[points.length]?.question}</p>
+          <div className='question__card__buttons'>
+            <Button type='primary' ghost id='quiz-btn' onClick={(): void => handleClick(true)}>
+              true
+            </Button>
+            <Button type='primary' ghost id='quiz-btn' onClick={(): void => handleClick(false)}>
+              false
+            </Button>
+          </div>
+        </div>
+        <div className='question__footer'>
+          <p>
+            {points.length + 1} of {list.length}
+          </p>
+        </div>
       </div>
     </div>
   );

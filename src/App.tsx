@@ -6,7 +6,7 @@ import './App.scss';
 
 export const App: FunctionComponent = (): ReactElement => {
   return (
-    <div className='container'>
+    <>
       <Switch>
         <Route path='/' exact component={QuizForm} />
         <Route path='/results' component={Results} />
@@ -14,6 +14,6 @@ export const App: FunctionComponent = (): ReactElement => {
           <ErrorMessage message='No page found' />
         </Route>
       </Switch>
-    </div>
+    </>
   );
 };

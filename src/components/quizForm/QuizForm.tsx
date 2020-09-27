@@ -37,7 +37,7 @@ export const QuizForm: FunctionComponent = (): ReactElement => {
   };
 
   return (
-    <>
+    <div className='container'>
       <header className='header'>
         <h1>
           Welcome to the Trivia <br />
@@ -46,18 +46,20 @@ export const QuizForm: FunctionComponent = (): ReactElement => {
       </header>
       <form className='form' onSubmit={handleSubmit}>
         {error && <ErrorMessage message={error} />}
-        <select value={inputs.difficulty} name='difficulty' placeholder='difficulty' onChange={handleChange} className='form__input'>
-          <option disabled value='select'>
-            difficulty
-          </option>
-          <option value='easy'>easy</option>
-          <option value='hard'>hard</option>
-        </select>
-        <input type='number' name='amount' placeholder='amount' value={inputs.amount} onChange={handleChange} className='form__input form__input--number' />
+        <div className='wrapper'>
+          <select value={inputs.difficulty} name='difficulty' placeholder='difficulty' onChange={handleChange} className='form__input form__input--select'>
+            <option disabled value='select'>
+              difficulty
+            </option>
+            <option value='easy'>easy</option>
+            <option value='hard'>hard</option>
+          </select>
+          <input type='number' name='amount' placeholder='amount' value={inputs.amount} onChange={handleChange} className='form__input form__input--number' />
+        </div>
         <Button type='primary' id='quiz-btn' htmlType='submit' disabled={!inputs.amount || inputs.difficulty === 'select'}>
           begin
         </Button>
       </form>
-    </>
+    </div>
   );
 };
