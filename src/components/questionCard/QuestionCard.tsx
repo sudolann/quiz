@@ -5,9 +5,8 @@ import { getQuizData } from '../../state/quiz/selectors';
 import { QuizState } from '../../state/quiz/reducer';
 import { setScore } from '../../state/points/actions';
 import { getPoints } from '../../state/points/selectors';
-import { Results } from '../results/Results';
-import './QuestionCard.scss';
 import { Redirect, useHistory } from 'react-router';
+import './QuestionCard.scss';
 
 export const QuestionCard: FunctionComponent = (): ReactElement => {
   const dispatch = useDispatch();

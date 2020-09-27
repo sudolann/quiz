@@ -18,6 +18,7 @@ export const QuizForm: FunctionComponent = (): ReactElement => {
   const quiz: QuizState = useSelector(getQuizData);
   const { loading, error, list } = quiz;
   const [inputs, setInputs] = useState<FormProps>({ difficulty: 'select' });
+  
   if (loading) {
     return <LoadingBar />;
   }

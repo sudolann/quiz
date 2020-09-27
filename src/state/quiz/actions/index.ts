@@ -14,6 +14,8 @@ export const actionFetchQuizFailure = createAction(FETCH_QUIZ.FAILURE, (message:
   payload: message,
 }));
 
+export const actionResetQuiz = createAction(FETCH_QUIZ.RESET);
+
 export function fetchQuestions(difficulty: DifficultyLevel, amount: number): AppThunk {
   return async (dispatch: (arg0: { payload: QuestionsProps[] | string; type: string }) => void): Promise<void> => {
     const request = fetch(`https://opentdb.com/api.php?amount=${amount}&difficulty=${difficulty}&type=boolean`);
@@ -21,7 +23,6 @@ export function fetchQuestions(difficulty: DifficultyLevel, amount: number): App
 
     try {
       const data = await (await request).json();
-      console.log(data.response_code);
       if (data.response_code !== 0) {
         dispatch(actionFetchQuizFailure('Problem with fetch questions, please try later'));
       } else {
@@ -36,5 +37,10 @@ export function fetchQuestions(difficulty: DifficultyLevel, amount: number): App
     } catch (error) {
       dispatch(actionFetchQuizFailure(error || 'Problem with fetch questions'));
     }
+  };
+}
+export function resetQuiz(): AppThunk {
+  return (dispatch): void => {
+    dispatch(actionResetQuiz());
   };
 }
