@@ -1,12 +1,12 @@
-# Dogs App
+# Trivia Challenge
 
-Frontend application for displaying dogs images by their breed
+Frontend application for Trivia Quiz powered by Opentdb API
 
-Technologies: React, Create React app, Typescript, redux scss, jest, fetch, Cypress
+Technologies: React, Create React app, Typescript, redux, redux-thunk, redux-persist, scss, jest, fetch, Cypress
 
 ## Installation
 
-Clone the repo: https://github.com/sudolann/dog-App.git
+Clone the repo: https://github.com/sudolann/quiz.git
 
 ```
 npm install
@@ -18,6 +18,5 @@ Open your browser at: http://localhost:3000
 
 ```
 jest: npm run test;
-coverage: npm run coverage;
-integration test: npx cypress open
+integration test: npm start && npx cypress open
 ```
