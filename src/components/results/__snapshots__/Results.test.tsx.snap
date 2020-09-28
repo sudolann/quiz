@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component Results match snapshot 1`] = `
+<div
+  className="results"
+>
+  <div
+    className="results__title"
+  >
+    <h1>
+      You scored
+      <br />
+      1
+      /
+      2
+    </h1>
+  </div>
+  <div
+    className="results__questions"
+  >
+    <div
+      className="results__question__item"
+    >
+      <div
+        className="svg"
+      >
+        <svg>
+          minus.svg
+        </svg>
+      </div>
+      <p>
+        Nutella is produced by the German company Ferrero.
+      </p>
+    </div>
+    <div
+      className="results__question__item"
+    >
+      <div
+        className="svg"
+      >
+        <svg>
+          plus.svg
+        </svg>
+      </div>
+      <p>
+        Romanian belongs to the Romance language family, shared with French, Spanish, Portuguese and Italian. 
+      </p>
+    </div>
+    <button
+      className="ant-btn ant-btn-primary"
+      id="quiz-btn"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        play again?
+      </span>
+    </button>
+  </div>
+</div>
+`;

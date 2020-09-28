@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component QuizForm match snapshot 1`] = `
+<div
+  className="container"
+>
+  <header
+    className="header"
+  >
+    <h1>
+      Welcome to the Trivia 
+      <br />
+      Challenge!
+    </h1>
+  </header>
+  <form
+    className="form"
+    onSubmit={[Function]}
+  >
+    <div
+      className="wrapper"
+    >
+      <select
+        className="form__input form__input--select"
+        name="difficulty"
+        onChange={[Function]}
+        placeholder="difficulty"
+        value="select"
+      >
+        <option
+          disabled={true}
+          value="select"
+        >
+          difficulty
+        </option>
+        <option
+          value="easy"
+        >
+          easy
+        </option>
+        <option
+          value="hard"
+        >
+          hard
+        </option>
+      </select>
+      <input
+        className="form__input form__input--number"
+        name="amount"
+        onChange={[Function]}
+        placeholder="amount"
+        type="number"
+      />
+    </div>
+    <button
+      className="ant-btn ant-btn-primary"
+      disabled={true}
+      id="quiz-btn"
+      onClick={[Function]}
+      type="submit"
+    >
+      <span>
+        begin
+      </span>
+    </button>
+  </form>
+</div>
+`;

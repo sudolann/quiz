@@ -4,8 +4,12 @@ import { ThunkAction, ThunkDispatch } from 'redux-thunk';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { RootState, rootReducer } from './rootReducer';
+import { QuizState } from './quiz/reducer';
+export interface StateProps extends RootState {
+  quiz: QuizState;
+  points: Array<0 | 1>;
+}
 
-// export const store = configureStore({reducer: rootReducer})
 const persistConfig = {
   key: 'root',
   storage,
@@ -13,11 +17,7 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 export const store = configureStore({ reducer: persistedReducer });
 export const persistor = persistStore(store);
-// export default () => {
-//   let store = configureStore({ reducer: rootReducer });
-//   let persistor = persistStore(store);
-//   return { store, persistor };
-// };
+
 export type AppState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 export type AppThunk = ThunkAction<void, RootState, null, Action<string>>;

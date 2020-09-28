@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component QuestionCard match snapshot 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="question"
+  >
+    <div
+      className="question__header"
+    >
+      <h1>
+        General Knowledge
+      </h1>
+    </div>
+    <div
+      className="question__card"
+    >
+      <p>
+        Nutella is produced by the German company Ferrero.
+      </p>
+      <div
+        className="question__card__buttons"
+      >
+        <button
+          className="ant-btn ant-btn-primary ant-btn-background-ghost"
+          id="quiz-btn"
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            true
+          </span>
+        </button>
+        <button
+          className="ant-btn ant-btn-primary ant-btn-background-ghost"
+          id="quiz-btn"
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            false
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      className="question__footer"
+    >
+      <p>
+        1
+         of 
+        2
+      </p>
+    </div>
+  </div>
+</div>
+`;

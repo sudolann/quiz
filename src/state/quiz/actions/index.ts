@@ -32,6 +32,7 @@ export function fetchQuestions(difficulty: DifficultyLevel, amount: number): App
           const { category, question, correct_answer } = item;
           return [...acc, { category, question: entities.decode(question), correct_answer }];
         }, []);
+        console.log(results, 'red');
         dispatch(actionFetchQuizSuccess(results));
       }
     } catch (error) {

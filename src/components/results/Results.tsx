@@ -1,23 +1,22 @@
 import React, { FunctionComponent, ReactElement } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPoints } from '../../state/points/selectors';
-import { QuestionsProps, QuizState } from '../../state/quiz/reducer';
-import { getQuizData } from '../../state/quiz/selectors';
+import { QuestionsProps } from '../../state/quiz/reducer';
 import { Button } from 'antd';
 import { ReactComponent as Minus } from '../../assets/minus.svg';
 import { ReactComponent as Plus } from '../../assets/plus.svg';
 import { resetQuiz } from '../../state/quiz/actions';
 import { resetScore } from '../../state/points/actions';
 import { useHistory } from 'react-router';
+import { StateProps, store } from '../../state';
 import './Results.scss';
 
 export const Results: FunctionComponent = (): ReactElement => {
   const dispatch = useDispatch();
   const history = useHistory();
+  const state = useSelector<ReturnType<typeof store.getState>, StateProps>((state) => state);
 
-  const points: Array<0 | 1> = useSelector(getPoints);
-  const quiz: QuizState = useSelector(getQuizData);
-  const list: QuestionsProps[] = quiz.list;
+  const points: Array<0 | 1> = state.points;
+  const list: QuestionsProps[] = state.quiz.list;
 
   const sum = points.reduce((acc: number, item: number) => {
     const res = acc + item;

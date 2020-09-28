@@ -1,18 +1,16 @@
 import React, { FunctionComponent, ReactElement } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button } from 'antd';
-import { getQuizData } from '../../state/quiz/selectors';
-import { QuizState } from '../../state/quiz/reducer';
 import { setScore } from '../../state/points/actions';
-import { getPoints } from '../../state/points/selectors';
 import { Redirect } from 'react-router';
+import { store, StateProps } from '../../state';
 import './QuestionCard.scss';
 
 export const QuestionCard: FunctionComponent = (): ReactElement => {
   const dispatch = useDispatch();
-  const quiz: QuizState = useSelector(getQuizData);
-  const points: Array<0 | 1> = useSelector(getPoints);
-  const list = quiz.list;
+  const state = useSelector<ReturnType<typeof store.getState>, StateProps>((state) => state);
+  const points: Array<0 | 1> = state.points;
+  const list = state.quiz.list;
   const handleClick = (answer: boolean) => {
     const correctAnswer = list[points.length].correct_answer === 'True' ? true : false;
     const point = correctAnswer === answer ? 1 : 0;

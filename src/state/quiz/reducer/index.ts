@@ -12,7 +12,7 @@ export interface QuizState {
   error: string | null;
 }
 
-const initialState: QuizState = {
+export const initialState: QuizState = {
   list: [],
   loading: false,
   error: null,
@@ -31,14 +31,14 @@ export const quiz = createReducer<QuizState>(initialState, {
   },
   [actionFetchQuizPending.type]: (state, action) => {
     return {
-      ...state,
+      list: [],
       error: null,
       loading: true,
     };
   },
   [actionFetchQuizFailure.type]: (state, action) => {
     return {
-      ...state,
+      list: [],
       loading: false,
       error: action.payload,
     };
