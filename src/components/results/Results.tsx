@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactElement } from 'react';
+import React, { FunctionComponent, ReactElement, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { QuestionsProps } from '../../state/quiz/reducer';
 import { Button } from 'antd';
@@ -22,11 +22,15 @@ export const Results: FunctionComponent = (): ReactElement => {
     const res = acc + item;
     return res;
   }, 0);
+  useEffect(() => {
+    if (!list.length || !points.length) {
+      history.push('/');
+    }
+  }, [points, list]);
 
   const handleClick = () => {
     dispatch(resetQuiz());
     dispatch(resetScore());
-    history.push('/');
   };
   return (
     <div className='results'>
