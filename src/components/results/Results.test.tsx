@@ -73,5 +73,5 @@ describe('component', (): void => {
   const button = wrapper.find('Button');
 
   button.simulate('click');
-  expect(mock).toHaveBeenCalledTimes(3);
+  expect(mock).toHaveBeenCalledTimes(2);
 });

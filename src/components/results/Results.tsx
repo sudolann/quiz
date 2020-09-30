@@ -26,7 +26,7 @@ export const Results: FunctionComponent = (): ReactElement => {
     if (!list.length || !points.length) {
       history.push('/');
     }
-  }, [points, list]);
+  }, [points, list, history]);
 
   const handleClick = () => {
     dispatch(resetQuiz());
